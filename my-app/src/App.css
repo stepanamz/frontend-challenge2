@@ -28,11 +28,10 @@ img {
 ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
   overflow: hidden;
   border: 1px solid #e7e7e7;
   background-color: #2196f3;
-  padding-left: 62px;
+  padding-left: 0;
 }
 
 li {
@@ -58,20 +57,29 @@ li button.active {
   background-color: #1e88e5;
 }
 
-/* Основные стили для сетки */
-@mixin clearfix {
-  &:after {
-    display: table;
-    clear: both;
-    content: "";
+.l-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 12px;
+  margin: 12px auto 0;
+}
+
+@media (min-width: 768px) {
+  .l-wrap {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.l-wrap {
-  display: grid;
-  grid-template-columns: repeat(5, 225px);
-  grid-gap: 48px;
-  text-align: center;
-  margin: 35px auto 0;
-  padding: 0 62px;
+@media (min-width: 1200px) {
+  .l-wrap {
+    display: grid;
+    grid-template-columns: repeat(5, 225px);
+    grid-gap: 48px;
+    margin: 12px auto 0;
+    padding: 0 62px;
+  }
+
+  ul {
+    padding-left: 62px;
+  }
 }

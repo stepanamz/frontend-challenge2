@@ -1,6 +1,6 @@
 .cat {
-  height: 225px;
   box-sizing: border-box;
+  height: 200px;
 }
 
 .cat:hover {
@@ -26,4 +26,10 @@
 
 .cat:hover .cat__like {
   display: block;
+}
+
+@media (min-width: 1200px) {
+  .cat {
+    height: 225px;
+  }
 }
